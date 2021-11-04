@@ -22,13 +22,12 @@ namespace notepad
 
 		private void New_Click(object sender, EventArgs e)
 		{
+			string message = "Do you want to save changes in the file?";
+			string caption = "Notepad";
+			MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+			DialogResult result = new DialogResult();
 			if (richTextBox1.Text != "")
 			{
-				string message = "Do you want to save changes in the file?";
-				string caption = "Notepad";
-				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-				DialogResult result;
-
 				result = MessageBox.Show(message, caption, buttons);
 
 				if (result == DialogResult.Yes)
@@ -37,8 +36,12 @@ namespace notepad
 				}
 				// MessageBox.Show("Do you want to save the file?", "Notepad");
 			}
-			richTextBox1.Clear();
-			filePath = "";
+			if (result != DialogResult.Cancel)
+			{
+				richTextBox1.Clear();
+				filePath = "";
+			}
+			
 		}
 
 		private void Open_Click(object sender, EventArgs e)
