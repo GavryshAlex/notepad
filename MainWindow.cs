@@ -19,6 +19,20 @@ namespace notepad
 			InitializeComponent();
 		}
 
+		private DialogResult MessageBoxResult(DialogResult result, string message, string caption, MessageBoxButtons buttons/*, object sender, EventArgs e*/)
+		{
+			if (richTextBox1.Text != "")
+			{
+				result = MessageBox.Show(message, caption, buttons);
+
+				/*if (result == DialogResult.Yes)
+				{
+					return DialogResult.Yes;
+					//Save_Click(sender, e);
+				}*/
+			}
+			return result;
+		}
 
 		private void New_Click(object sender, EventArgs e)
 		{
@@ -26,7 +40,8 @@ namespace notepad
 			string caption = "Notepad";
 			MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
 			DialogResult result = new DialogResult();
-			if (richTextBox1.Text != "")
+			result = MessageBoxResult(result, message, caption, buttons/*, sender, e*/);
+			/*if (richTextBox1.Text != "")
 			{
 				result = MessageBox.Show(message, caption, buttons);
 
@@ -35,9 +50,13 @@ namespace notepad
 					Save_Click(sender, e);
 				}
 				// MessageBox.Show("Do you want to save the file?", "Notepad");
-			}
+			}*/
 			if (result != DialogResult.Cancel)
 			{
+				if (result == DialogResult.Yes)
+				{
+					Save_Click(sender, e);
+				}
 				richTextBox1.Clear();
 				filePath = "";
 			}
@@ -107,7 +126,22 @@ namespace notepad
 
 		private void Exit_Click(object sender, EventArgs e)
 		{
-			Close();
+			string message = "Do you want to save changes in the file?";
+			string caption = "Notepad";
+			MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+			DialogResult result = new DialogResult();
+			result = MessageBoxResult(result, message, caption, buttons/*, sender, e*/);
+			if (result != DialogResult.Cancel)
+			{
+				if (result == DialogResult.Yes)
+				{
+					Save_Click(sender, e);
+				}
+				/*richTextBox1.Clear();
+				filePath = "";*/
+				Close();
+			}
+			
 		}
 
 		private void Font_Click(object sender, EventArgs e)
