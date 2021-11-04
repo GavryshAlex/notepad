@@ -22,7 +22,23 @@ namespace notepad
 
 		private void New_Click(object sender, EventArgs e)
 		{
+			if (richTextBox1.Text != "")
+			{
+				string message = "Do you want to save changes in the file?";
+				string caption = "Notepad";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result;
+
+				result = MessageBox.Show(message, caption, buttons);
+
+				if (result == DialogResult.Yes)
+				{
+					Save_Click(sender, e);
+				}
+				// MessageBox.Show("Do you want to save the file?", "Notepad");
+			}
 			richTextBox1.Clear();
+			filePath = "";
 		}
 
 		private void Open_Click(object sender, EventArgs e)
@@ -56,7 +72,14 @@ namespace notepad
 			}
 			else
 			{
-				File.WriteAllText(filePath, richTextBox1.Text);
+				try
+				{
+					File.WriteAllText(filePath, richTextBox1.Text);
+				}
+				catch
+				{
+					MessageBox.Show("Error Saving of TXT-File!");
+				}
 			}
 		}
 
@@ -75,7 +98,7 @@ namespace notepad
 			}
 			catch
 			{
-				MessageBox.Show("Error Reading of TXT-File!");
+				MessageBox.Show("Error Saving of TXT-File!");
 			}
 		}
 
