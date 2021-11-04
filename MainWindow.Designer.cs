@@ -43,6 +43,8 @@ namespace notepad
 			this.fontDialog1 = new System.Windows.Forms.FontDialog();
 			this.colorDialog1 = new System.Windows.Forms.ColorDialog();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -114,6 +116,9 @@ namespace notepad
 			// 
 			// formatToolStripMenuItem
 			// 
+			this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontToolStripMenuItem,
+            this.colorToolStripMenuItem});
 			this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
 			this.formatToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
 			this.formatToolStripMenuItem.Text = "Format";
@@ -135,6 +140,20 @@ namespace notepad
 			this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit_Click);
+			// 
+			// fontToolStripMenuItem
+			// 
+			this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+			this.fontToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.fontToolStripMenuItem.Text = "Font";
+			this.fontToolStripMenuItem.Click += new System.EventHandler(this.Font_Click);
+			// 
+			// colorToolStripMenuItem
+			// 
+			this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+			this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.colorToolStripMenuItem.Text = "Color";
+			this.colorToolStripMenuItem.Click += new System.EventHandler(this.Color_Click);
 			// 
 			// MainWindow
 			// 
@@ -169,6 +188,8 @@ namespace notepad
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.FontDialog fontDialog1;
 		private System.Windows.Forms.ColorDialog colorDialog1;
+		private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
 	}
 }
 
