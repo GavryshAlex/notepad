@@ -78,5 +78,10 @@ namespace notepad
 				MessageBox.Show("Error Reading of TXT-File!");
 			}
 		}
+
+		private void Exit_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 	}
 }

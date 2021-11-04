@@ -40,6 +40,9 @@ namespace notepad
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.saveToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.fontDialog1 = new System.Windows.Forms.FontDialog();
+			this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -76,7 +79,8 @@ namespace notepad
             this.newToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveToolStripMenuItem2,
-            this.saveToolStripMenuItem1});
+            this.saveToolStripMenuItem1,
+            this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
 			this.fileToolStripMenuItem.Text = "File";
@@ -125,6 +129,13 @@ namespace notepad
 			this.saveToolStripMenuItem2.Text = "Save";
 			this.saveToolStripMenuItem2.Click += new System.EventHandler(this.Save_Click);
 			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,6 +166,9 @@ namespace notepad
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.FontDialog fontDialog1;
+		private System.Windows.Forms.ColorDialog colorDialog1;
 	}
 }
 
