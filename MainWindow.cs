@@ -159,5 +159,30 @@ namespace notepad
 				richTextBox1.ForeColor = colorDialog1.Color;
 			}
 		}
+
+		private void Undo_Click(object sender, EventArgs e)
+		{
+			richTextBox1.Undo();
+		}
+
+		private void Redo_Click(object sender, EventArgs e)
+		{
+			richTextBox1.Redo();
+		}
+
+		private void Cut_Click(object sender, EventArgs e)
+		{
+			richTextBox1.Cut();
+		}
+
+		private void Copy_Click(object sender, EventArgs e)
+		{
+			richTextBox1.Copy();
+		}
+
+		private void Paste_Click(object sender, EventArgs e)
+		{
+			richTextBox1.Paste();
+		}
 	}
 }
